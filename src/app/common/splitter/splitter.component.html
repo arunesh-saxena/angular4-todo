@@ -1,0 +1,16 @@
+<section #splitterSection class="splitter-section" (mouseleave)="onMouseOut($event)"
+(mousemove)="onMouseMove($event)"
+(mouseup)="onMouseUp($event)">
+  <div #contentLeft class="content-left" [ngStyle]="{'width.px': contentLw}">
+    <ng-content select="[content-left]"></ng-content>
+    <!-- <ul>
+        <li>hello</li>
+      </ul> -->
+  </div>
+  <div #splitter [ngStyle]="{'width.px':spliterw}" [ngClass]="{'active':isMouseDown}" class="splitter" (mousedown)="onMouseDown($event)"  ></div>
+  <div #contentRight [ngStyle]="{'width.px':contentRw}"  class="content-right">
+    <ng-content select="[content-right]"></ng-content>
+
+  </div>
+
+</section>

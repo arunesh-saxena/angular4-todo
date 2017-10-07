@@ -1,0 +1,13 @@
+<div *ngIf="!psdTemp; else psd">
+    <app-loader></app-loader>
+    <div class="container">
+        <app-custom-modal [isHide]="true"></app-custom-modal>
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
+</div>
+
+<ng-template #psd>
+    <router-outlet></router-outlet>
+</ng-template>

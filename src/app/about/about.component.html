@@ -1,0 +1,11 @@
+<p>
+    about works!
+</p>
+<a routerLink="./child-one" routerLinkActive="active">child one</a>
+<a [routerLink]="['child-three']" routerLinkActive="active">child three</a>
+<a [routerLink]="[{ outlets: { childTwo: ['child-two'] } }]" routerLinkActive="activeClass">Child Two</a>
+<div class="border-red">
+    <router-outlet></router-outlet>
+    <router-outlet name='childTwo'></router-outlet>
+</div>
+<app-aside [name]="name"></app-aside>

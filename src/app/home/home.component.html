@@ -1,0 +1,11 @@
+<div appHighlight [highlightColor]="highlightColor" [counter]=intCount (change)="countChange($event)">
+  {{name}} works! 
+  intCount : {{intCount}}
+  <button class="btn incrementBtn"> click me {{commonService.commonCounter}}</button>
+</div>
+
+<app-aside [name]="name"></app-aside>
+
+<button class="btn btn-primary" (click)="clickMe()">click me</button>
+
+<input type="text" [(ngModel)] = "textName" />{{textName}}

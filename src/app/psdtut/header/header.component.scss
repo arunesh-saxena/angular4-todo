@@ -1,0 +1,85 @@
+@import '../psdtut.component';
+#first{
+    background-image: url('/assets/imgs/psd/slider-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    .overlay{
+        background-color: rgba(0, 0, 0,.5);
+    }
+    .navbar{
+        flex-direction: row;
+        padding: 40px 0;
+    }
+}
+
+.jumbotron_1{
+    background-color: transparent;
+    // margin: 50px 0 15px;
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    h1{
+        font-size: 56px;
+        color: $white;
+        span{
+            color: $color1;
+        }
+    }
+    p{
+        color: $white;
+        font-size: 28px;
+        font-weight: 200;
+        margin-bottom: 15px;
+    }
+    .hire-us-section{
+        margin: 50px 0 100px;
+        .hire-us{
+            color: $white;
+            background-color: $color1;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    }
+}
+.cirle-arrow-down{
+    background-image: url('/assets/imgs/psd/circle-arrow-down.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;  
+    // background: transparent;
+    // border: 1px solid $white;
+    // border-radius: 50%;
+    display: inline-block;
+    // position: relative;
+}
+.circle-icon{
+    width: 25px;
+    height: 25px;  
+    background: transparent;
+    border: 1px solid $white;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    &:before, &:after{
+        content: ' ';
+        position: absolute;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        display: block;
+        width: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    &-down:before{
+        top: 7px;
+        border-top: 8px solid $caret-color;
+        z-index: 1;
+        
+    }
+    &-down:after{
+        border-top: 8px solid $white;
+        top: 8px;
+    }
+}

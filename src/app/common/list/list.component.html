@@ -1,0 +1,21 @@
+<ul #listUl class="list-group" (scroll)="onScrolling($event)">
+  <div *ngIf="list.length; then  listItems else noList"></div>
+  <ng-template #listItems>
+    <li *ngFor="let item of list ;let i = index;   " class="list-group-item">
+
+      <span class="">index - {{i}} ::  {{item.title}} - {{item.userId}}</span>
+
+    </li>
+  </ng-template>
+
+  <ng-template #noList>
+    <li class="list-group-item">No item Found</li>
+  </ng-template>
+
+</ul>
+
+
+  <!-- single slot transclusion here -->
+    <ng-content select="[content-body]"></ng-content>
+    
+  <ng-content select="[card-body]"></ng-content>

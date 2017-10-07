@@ -1,0 +1,38 @@
+@import '../psdtut.component.scss';
+.text-center{
+    text-align: center;
+}
+#our-work{
+    padding: 50px 0;
+    .our-work{
+        text-align: center;
+        width: 40%;
+        margin: 0 auto;
+        h2{
+            font-size: 35px;
+            span{
+                color: $color1;
+            }
+        }
+        p{
+            font-size: 16px;
+            color:  $color2;
+        }
+    }
+    .image-section{
+        margin: 25px 0;
+        .img-thumbnail{
+            border: none;
+        }
+    }
+    .show-button{
+        text-align: center;
+        margin: 25px 0;
+        button{
+            background: $white;
+            border: 1px solid $color3;
+            padding: 10px 30px;
+        }
+    }
+    
+}

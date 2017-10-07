@@ -1,0 +1,23 @@
+#chat {
+    position: fixed;
+    background-color: #ddd6ce;
+    opacity: 0.9;
+}
+    .chatList{
+        height: 90%;
+        overflow: auto;
+    }
+.chat-corner-resize {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+#chat-top-left-resize { top: 0px; left: 0px; }
+#chat-top-right-resize { top: 0px; right: 0px; }
+#chat-bottom-left-resize { bottom: 0px; left: 0px; }
+#chat-bottom-right-resize { bottom: 0px; right: 0px; }
+#chatBoxText{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

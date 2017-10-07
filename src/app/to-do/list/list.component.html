@@ -1,0 +1,22 @@
+<!--<div class="row">
+  <div class="col">-->
+<ul class="to-Do-list list-group">
+
+  <li *ngFor="let item of toDoList ;let i = index;   " class="list-group-item" [ngClass]="{'completed':item.isCompleted}">
+    <button class="btn btn-secondary margin-r-5 border-r50" (click)="toggleToDoComplete(item.id, item.isCompleted)">
+            <i class="fa fa-check" aria-label="Done"></i>
+            </button>
+    <span class="">index : {{i}}  {{item.name}} - {{item.id}}</span>
+    <div class="float-right">
+      <button class="btn btn-default margin-r-5" (click)="onSelect(item.id)">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </button>
+      <button class="btn btn-secondary border-r50" aria-label="Delete" (click)="removeTodo(item.id)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+    </div>
+  </li>
+
+</ul>
+<!--</div>
+</div>-->

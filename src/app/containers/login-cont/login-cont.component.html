@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 ">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-6">
+              <a (click)="goToRegister($event,'login')" [ngClass]="{'active': displayPage == 'login'}">Login</a>
+            </div>
+            <div class="col-md-6">
+              <a (click)="goToRegister($event,'register')" [ngClass]="{'active': displayPage == 'register'}">Register</a>
+            </div>
+          </div>
+          <hr [ngStyle]="{
+            'background-image': '-webkit-linear-gradient(left,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0))'}"
+          />
+        </div>
+        <div *ngIf="displayPage == 'login' else register">
+
+          <app-login [onlogin]="loginUser.bind(this)" (onLoginCall)="loginCall($event)"> </app-login>
+        </div>
+        <ng-template #register>
+          <app-register [onregister]="registerForm.bind(this)"></app-register>
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-md-6 ">
+      offset-md-4
+      <div *ngIf="serverInfo.msg" [ngClass]="{'alert-success':serverInfo.success, 'alert-danger':!serverInfo.success}" class="alert">
+        {{serverInfo.msg}}
+      </div>
+    </div>
+  </div>
+</div>

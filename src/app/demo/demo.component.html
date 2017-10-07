@@ -1,0 +1,97 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <p #wrapper class='hello'>
+        demo works!
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h4>Spitter</h4>
+      <app-splitter [contentOption]="splitter">
+        <div content-left>
+          <ul class='list-group'>
+            <li *ngFor="let item of spliterList; let i = index;" [ngClass]="{'active':(activeSpliterItem === i)}" class="list-group-item"
+              (click)="splitterItemClick(i)">
+              {{item.item}}
+            </li>
+          </ul>
+        </div>
+        <div content-right>
+          <div  *ngFor="let item of spliterList; let i = index;" [ngClass]="{'none':(activeSpliterItem !== i)}" class="col-md-12 splitterContent{{i}}">
+              {{item.content}}
+          </div>
+        </div>
+      </app-splitter>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <hr>
+      <div class='name'>
+        <app-custom-tool-tip>Arunesh Saxena Tool Tip tip tptpptptptp</app-custom-tool-tip>
+      </div>
+      <hr>
+      <h4>Modal pop</h4>
+      <app-custom-modal (customClick)="modalClick($event)"></app-custom-modal>
+      <hr>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col cont" style="height:200px">
+      <button class="btn" (click)="onReset()">Reset</button>
+      <div class="box-container" #boxContainer>
+        <div class="box" [@myAwesomeAnimation]='state' #box (click)="onBoxClick()">#box</div>
+
+        <div class="box box-2" #goal (click)="onGoalClick()">Click me to get #box in #goal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <hr/>
+      <!-- <ng-content select="[content-body]"></ng-content> -->
+      <button class='btn btn-primary' (click)="getList()"> get http list</button>
+      <app-list [list]="list" (loadMoreList)="loadMoreList($event)">
+        <div content-body>
+          This is examle of ng-content
+        </div>
+        <div class="card-block" card-body>
+          Content 1
+        </div>
+      </app-list>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+      <!-- <div dropzone="" #dropDiv (drop)="drop(dropDiv)" style="border: 1px solid;"> hello drop</div>
+<div [draggable]="true" #dragDiv (drag)="drag(dragDiv)" style="border: 1px solid;"> hello drag</div> -->
+
+      <hr />
+      <h2> Dnd</h2>
+      <a href='http://embed.plnkr.co/JbG8Si'>Drag and drop demo</a>
+      <app-simplednd></app-simplednd>
+      <app-simple-sortable></app-simple-sortable>
+      <app-embedded-sortable></app-embedded-sortable>
+      <app-multi-sortable></app-multi-sortable>
+      <app-shopping-basket></app-shopping-basket>
+
+
+
+      <hr />
+
+      <h2> dragula</h2>
+      <app-dragula-test></app-dragula-test>
+    </div>
+  </div>
+
+</div>

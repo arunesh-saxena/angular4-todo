@@ -1,0 +1,24 @@
+.name{
+    width: 20%;
+}
+.box-container{
+    position: relative;
+}
+.box{
+    position: relative; 
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    float: left;
+    transition: all 1s;
+}
+.box-2{
+    /* top: 50px;
+    left: 40px; */
+    transform: translate(40px,50px);
+    border: 2px solid black;
+}
+.none{
+    display: none;
+}

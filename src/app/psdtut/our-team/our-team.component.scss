@@ -1,0 +1,28 @@
+@import '../psdtut.component.scss';
+
+#our-team{
+    padding: 50px 0;
+    .our-team{
+        text-align: center;
+        width: 40%;
+        margin: 0 auto;
+        h2{
+            font-size: 35px;
+            span{
+                color: $color1;
+            }
+        }
+        p{
+            font-size: 16px;
+            color:  $color2;
+        }
+    }
+     ::ng-deep {
+
+      p{
+            color:  blue ;
+        }
+    }
+    
+    
+}

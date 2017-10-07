@@ -1,0 +1,15 @@
+<p>
+    aside works! Hello {{name}}
+    <br>
+    commonService.commonCounter :{{commonService.commonCounter}}
+    <br>
+    intCount : {{intCount}}
+</p>
+<button class="btn"(click) = "resetClickMe()" >Rest click me</button>
+<ul>
+    <li appHighlight *ngFor="let item of asideList;let index = index"
+     (change)="countChange($event)"
+     [counter]=intCount>
+        {{item + '-'+index}}
+    </li>
+</ul>

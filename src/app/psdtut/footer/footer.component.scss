@@ -1,0 +1,17 @@
+@import '../psdtut.component.scss';
+// @import '../../../assets/styles.scss';
+#foruth{
+    padding: 15px 40px;
+    background: $color2;
+    .copy-right{
+        color: $white;
+        text-align: left
+    }
+    .design-by{
+        color: $white;
+        @include media-breakpoint-up(md) {
+            text-align: right
+        }
+        
+    }
+}

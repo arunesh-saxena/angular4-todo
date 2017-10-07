@@ -1,0 +1,45 @@
+ .ellip-container{
+    position: relative;
+}
+
+.ellip{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+} 
+
+.tool-tip{
+    display: inline-block;
+    opacity: 1;
+    /* max-width: 200px; */
+    width:auto;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    border-radius: .25rem;
+    position: absolute;
+    transition: all 1s;
+    /* top: -133%; */
+    top: -30px;
+    /* left: 0;
+    right: 0; */
+    left: 10%;
+    /* margin-left: -60px; */
+    white-space: nowrap;
+}
+
+.tool-tip::before{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    bottom: -5px;
+    left: 8px;
+    margin-left: -5px;
+    content: "";
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+    
+} 

@@ -1,0 +1,28 @@
+<section>
+  <nav #inPageNav class='in-page-nav col-md-12' [class.fixed]="navIsFixed">
+    <ul>
+      <li [ngClass]="{'active':(activeNav===0)}">
+        <a class="link" href="javascript:void(0)" (click)="navClick(0)">Our Work</a>
+      </li>
+      <li [ngClass]="{'active':(activeNav===1)}">
+        <a class="link" href="javascript:void(0)" (click)="navClick(1)">Our Team</a>
+      </li>
+      <li [ngClass]="{'active':(activeNav===2)}">
+        <a class="link" href="javascript:void(0)" (click)="navClick(2)">Contact Us</a>
+      </li>
+    </ul>
+  </nav>
+  <article #article id="1" data-nav='0'>
+    <app-our-works></app-our-works>
+    <hr>
+  </article>
+  <article #article id="2" data-nav='1'>
+
+    <app-our-team></app-our-team>
+    <hr>
+  </article>
+  <article #article id="3" data-nav='2'>
+    <app-say-hello></app-say-hello>
+
+  </article>
+</section>

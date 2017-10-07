@@ -1,0 +1,58 @@
+<h4>Simple Drag-and-Drop</h4>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="panel panel-success">
+      <div class="panel-heading">Available to drag</div>
+      <div class="panel-body" dnd-sortable-container [sortableData]="dragAbleList"  [dropZones]="['source-dropZone']"
+      >
+        <ul class="list-group" class="panel panel-default">
+          <li *ngFor="let item of dragAbleList;let i = index;"
+           dnd-sortable [sortableIndex]="i"
+             [dragEnabled]="true" [dragData]="item" class="list-group-item panel-body" 
+             (onDragSuccess)="onDragSuccess($event)" 
+             (onDragStart)="onDragStart($event)"
+             (onDragEnd)="onDragEnd(' item '+i)"
+             (onDropSuccess)="onDropSuccess($event,'sort')" >
+            <div>{{item}}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+   <div class="col-sm-3">
+    <div class="panel panel-info"  dnd-droppable  [dropZones]="['source-dropZone']"
+    dnd-sortable-container [sortableData]="targetList" 
+    (onDropSuccess)="onDropSuccess($event)" 
+     (onDragOver)="onDragOver($event)"
+    (onDragLeave)="onDragLeave($event)"
+    (onDragEnter)="onDragEnter($event)"
+    >
+      <div class="panel-heading">Place to drop</div>
+      <div class="panel-body">
+        <div *ngIf="targetList.length === 0 ">Drop item here</div>
+        <ul class="list-group">
+          <li  dnd-sortable [sortableIndex]="i" *ngFor="let item of targetList;let i = index;" [dragData]="item"  class="list-group-item"
+             (onDropSuccess)="onDropSuccess($event,'sort')"
+            (onDragSuccess)="onDragSuccess($event)" 
+             (onDragStart)="onDragStart($event)"
+             (onDragEnd)="onDragEnd($event)"> {{item}}</li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <div class="col-sm-3">
+    <div class="panel panel-info"  dnd-droppable  [dropZones]="['source-dropZone']"
+    (onDropSuccess)="onDropSuccess($event)"
+     (onDragOver)="onDragOver($event)"
+    (onDragLeave)="onDragLeave($event)"
+    (onDragEnter)="onDragEnter($event)">
+      <div class="panel-heading">Place to drop</div>
+      <div class="panel-body">
+        <div *ngIf="targetList.length === 0 ">Drop item here</div>
+        <ul class="list-group">
+          <li  *ngFor="let item of targetList;let i = index;" class="list-group-item" > {{item}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

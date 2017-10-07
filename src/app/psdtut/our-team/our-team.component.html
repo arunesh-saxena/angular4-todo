@@ -1,0 +1,24 @@
+<section id='our-team'>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="our-team">
+          <h2>Our <span>Team</span></h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="image-section">
+      <div class="row">
+        <div *ngFor="let emp of team" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+          <app-profile-card [profileInfo]="emp"></app-profile-card>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

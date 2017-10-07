@@ -1,0 +1,33 @@
+/*import {ToDoItem } from '../toDoItem';
+export const list: ToDoItem []=*/ [
+    {
+        "id": 0,
+        "isCompleted": true,
+        "isDeleted": false,
+        "name": "item-1"
+    }
+    {
+        "id": 2,
+        "isCompleted": false,
+        "isDeleted": false,
+        "name": "item-1"
+    }
+    {
+        "id": 3,
+        "isCompleted": false,
+        "isDeleted": false,
+        "name": "item-1"
+    }
+    {
+        "id": 4,
+        "isCompleted": false,
+        "isDeleted": false,
+        "name": "item-1"
+    }
+    {
+        "id": 5,
+        "isCompleted": false,
+        "isDeleted": false,
+        "name": "item-1"
+    }
+]

@@ -1,0 +1,43 @@
+<section class="to-do">
+  <div class="row ">
+    <div class="col">
+      <header>
+        <h1 class="">ToDos{{title}}</h1>
+        <div class="input-group">
+          <input type="text" class="form-control itemText" [(ngModel)]="title" #itemText autofocus="" (keyup.enter)="addTodo(itemText.value)"
+            placeholder="What needs to be done?" />
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col">
+      <nav class="breadcrumb">
+        <a class="breadcrumb-item  active" [routerLink]="['/toDo']">View All</a>
+        <a class="breadcrumb-item  active" [routerLink]="['viewAll']">View All</a>
+        <a class="breadcrumb-item" href="#" [routerLink]="['active']">Active</a>
+        <a class="breadcrumb-item" href="#" [routerLink]="['completed']">Completed</a>
+      </nav>
+    </div>
+  </div>
+  <!-- <div class="row ">
+    <div class="col">
+      <nav class="breadcrumb">
+        <a class="breadcrumb-item" [ngClass]="{'active':activeBreadcrumb == breadcrumbIndex.viewAll}" [routerLink]="['/toDo']">from todoComponent</a>
+        <a class="breadcrumb-item" [ngClass]="{'active':activeBreadcrumb == breadcrumbIndex.viewALLList}" href="javascript:void(0)"
+          (click)="viewALLList()">View All</a>
+        <a class="breadcrumb-item" [ngClass]="{'active':activeBreadcrumb == breadcrumbIndex.activeList}" href="javascript:void(0)"
+          (click)="activeList()">Active</a>
+        <a class="breadcrumb-item" [ngClass]="{'active':activeBreadcrumb == breadcrumbIndex.completedList}" href="javascript:void(0)"
+          (click)="completedList()">Completed</a>
+      </nav>
+    </div>
+  </div> -->
+  <!--use this for listting-->
+  <router-outlet></router-outlet>
+  <div class="row">
+    <div class="col">
+      <app-list [toDoList]="toDoList" [toggleToDoComplete]="toggleToDoComplete" [removeTodo]="removeTodo"></app-list>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<div class="ellip-container" #ellipCont>
+  <!-- <div class="tool-tip" #toolTip *ngIf="displayToolTip">
+    {{toolTipText}}
+  </div> -->
+  <div class="content ellip" #txt (mouseenter)="onEnter($event)" (mouseout)="onOut($event)" (click)="onClick($event)">
+    <ng-content></ng-content>
+  </div>
+</div>

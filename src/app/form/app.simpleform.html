@@ -1,0 +1,59 @@
+<div class="jumbotron">
+    <h2>Template Driven Form</h2>
+    <!-- Here we are declaring a local variable called “form” and setting it to an instance of ngForm.
+      This is very important. Now our local form variable becomes of type FormGroup allowing us access to 
+      the FormGroup API’s on this local variable. We use this in the ngSubmit event where we send the value of the form via form.value -->
+    <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+        <div class="form-group">
+            <label>First Name:</label>
+            <!-- Since we are working with template driven forms, we can use the ngModel directive to capture 
+        the values of our forms. One thing to note if you are coming from Angular 1.x. Using ngModel as 
+        shown below creates a one-way data binding, so once we hit submit the data is only sent to the controller.
+         If we wanted to use two-way data binding, we would have to wrap the ngModel in [()] and assign an attribute to it.
+          Also the name of the field corresponds to the name attribute so our first 
+        input will be firstName. -->
+            <input type="text" class="form-control" placeholder="John" name="firstName" [(ngModel)]="user.firstName" #firtName="ngModel" required minlength="5">
+            <small [hidden]="firtName.valid || (firtName.pristine && !f.submitted)" class="text-danger">
+            Name is required (minimum 5 characters).</small>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Doe" name="lastName" [(ngModel)]="user.lastName" required>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+        </div>
+        <!-- Radio and checkboxes work much the same way -->
+        <div class="radio">
+            <label>
+          <input type="radio" name="gender" value="Male" [(ngModel)] = "user.gender">
+          Male
+        </label>
+        </div>
+        <div class="radio">
+            <label>
+          <input type="radio" name="gender" value="Female" [(ngModel)] = "user.gender">
+          Female
+        </label>
+        </div>
+        <div class="form-group" ngModelGroup="activities">
+            <label>Activities</label>
+            <label class="checkbox-inline">
+                <!--<input type="checkbox" name="hiking" [(ngModel)] = "user.activities['hiking']"
+                > Hiking-->
+                
+            </label>
+
+            <label class="checkbox-inline" *ngFor="let activity of activities; let i = index;">
+                <input type="checkbox" name="{{activity}}"
+                [(ngModel)]="user.activities[activity]" >{{activity}}-{{user.activities[activity]}}
+            </label>
+
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </form>
+</div>

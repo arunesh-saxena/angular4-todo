@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col">
+    <div class="input-group">
+      <input type="text" class="form-control itemText" 
+      [(ngModel)]="toDoInfo.name"
+       #itemText
+        autofocus=""
+        (keyup.enter)="edit(itemText)" placeholder="Give new name to your todo" />
+    </div>
+  </div>
+</div>
