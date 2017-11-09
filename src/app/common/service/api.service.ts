@@ -42,6 +42,6 @@ export class ApiService {
       return this.itemsList.slice(start, end);
     }
     console.log('getMoreItem', pageNo);
-    return []
+    return [];
   }
 }

@@ -43,6 +43,8 @@ export class LoginContComponent implements OnInit {
           id: res.data._id
         });
         this.router.navigate(['/dashboard']);
+      }else {
+        this.serverInfo.msg = res.message;
       }
     }, error => { console.log(error); });
   }
@@ -74,7 +76,7 @@ export class LoginContComponent implements OnInit {
       }
 
     },
-      error => { console.log(error) });;
+      error => { console.log(error); });
 
   }
 

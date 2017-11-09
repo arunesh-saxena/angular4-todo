@@ -37,7 +37,7 @@ export class FormValidationComponent implements OnInit {
 
 
   private atLeaseOne(formGroup: FormGroup, para) {
-    console.log(para)
+    console.log(para);
     for (let key in formGroup.controls) {
       if (formGroup.controls.hasOwnProperty(key)) {
         const control: FormControl = <FormControl>formGroup.controls[key];

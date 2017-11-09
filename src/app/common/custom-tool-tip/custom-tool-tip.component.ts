@@ -46,7 +46,7 @@ export class CustomToolTipComponent implements OnInit, AfterViewInit {
     let elmCordinate = {
       offsetLeft: $(this.ellipCont.nativeElement).offset().left,
       offsetTop: this.ellipCont.nativeElement.offsetTop
-    }
+    };
     let toolTipStyle = {
       left: (mouse.pageX - elmCordinate.offsetLeft - 5),
       // top: -this.toopTipElm.nativeElement.offsetHeight
@@ -74,7 +74,6 @@ export class CustomToolTipComponent implements OnInit, AfterViewInit {
         .appendTo('body');
 
     result = ($c.width() > $element.width());
-
 
     $c.remove();
     return result;

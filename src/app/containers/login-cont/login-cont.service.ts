@@ -21,12 +21,12 @@ export class LoginContService {
 
 
     registerUser = (data) => {
-        let bodyString = JSON.stringify(data);
+        const bodyString = JSON.stringify(data);
         return this.http2.post<any>(CONSTANTS.api.registerUser, bodyString);
     }
 
     loginUser = (data) => {
-        let bodyString = JSON.stringify(data);
+        const bodyString = JSON.stringify(data);
         /* let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers, withCredentials: true });
         return this.http.post(CONSTANTS.api.login, bodyString, options).map((res: Response) => res.json()); */

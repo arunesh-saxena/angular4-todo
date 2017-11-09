@@ -57,7 +57,6 @@ export class RegisterComponent implements OnInit {
     let val, valid = true;
 
     for (let name in group.controls) {
-      // console.log(val, name);
       if (val === undefined) {
         val = group.controls[name].value;
       } else {
