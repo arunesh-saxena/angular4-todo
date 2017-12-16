@@ -49,7 +49,6 @@ export class LoginContComponent implements OnInit {
     }, error => { console.log(error); });
   }
   loginUser(data) {
-    debugger;
     console.log('loginUser', data);
     /* this.securityService.loginUser(data).subscribe(res => {
       if (res.success) {
@@ -66,7 +65,6 @@ export class LoginContComponent implements OnInit {
     this.userService.setUserLoggedOut();
   }
   registerForm(data) {
-    debugger;
     this.securityService.registerUser(data).subscribe((res) => {
       this.serverInfo.success = res.success;
       if (res.success) {

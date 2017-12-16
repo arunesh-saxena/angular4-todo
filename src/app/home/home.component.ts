@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   name = 'home component';
   highlightColor = 'green';
   intCount = 0;
-  textName = 'textName';
+  textName = 'textName type';
   constructor(private _homeService: HomeService,
    private commonService: CommonService) {
     console.log('homeComponent constructor');

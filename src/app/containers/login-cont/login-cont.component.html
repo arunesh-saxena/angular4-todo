@@ -26,7 +26,7 @@
     </div>
     <div class="col-md-6 ">
       offset-md-4
-      <div *ngIf="serverInfo.msg" [ngClass]="{'alert-success':serverInfo.success, 'alert-danger':!serverInfo.success}" class="alert">
+      <div *ngIf="serverInfo.msg && serverInfo.msg.length" [ngClass]="{'alert-success':serverInfo.success, 'alert-danger':!serverInfo.success}" class="alert">
         {{serverInfo.msg}}
       </div>
     </div>

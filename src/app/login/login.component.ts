@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       'userName': ['', Validators.required],
       'password': ['', Validators.required]
-    })
+    });
   }
   loginUser(e) {
     e.preventDefault();
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     // this.loginForm.patchValue({'userName':'hellodd'});/* dose not check missing values */
 
     if (this.loginForm.valid) {
-      let loginData = {
+      const loginData = {
         'username': this.loginForm.get('userName').value,
         'password': this.loginForm.get('password').value
       }

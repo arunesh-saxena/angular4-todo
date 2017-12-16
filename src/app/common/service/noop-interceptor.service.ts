@@ -3,6 +3,8 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, Htt
 import { Observable } from 'rxjs/Rx';
 
 import { LoaderService } from '../loader/loader.service';
+import { UserService } from './user.service';
+
 @Injectable()
 export class NoopInterceptorService implements HttpInterceptor {
   private showLoader(): void {
@@ -11,7 +13,7 @@ export class NoopInterceptorService implements HttpInterceptor {
   private hideLoader(): void {
     this.loaderService.hide();
   }
-  constructor(private loaderService: LoaderService) { }
+  constructor( private loaderService: LoaderService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const headers = {
       'Content-Type': 'application/json'
@@ -26,6 +28,7 @@ export class NoopInterceptorService implements HttpInterceptor {
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
         this.loaderService.popUp(err);
+        // this.userService.setUserData({});
       }
     }).finally(() => {
       this.hideLoader();
