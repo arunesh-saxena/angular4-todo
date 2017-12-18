@@ -18,8 +18,6 @@ export class UserService {
   }
   setUserLoggedOut = () => {
     return this.http.get<any>(CONSTANTS.api.logout);
-
-
   }
   setUserData = (user) => {
     if (Object.keys(user).length) {

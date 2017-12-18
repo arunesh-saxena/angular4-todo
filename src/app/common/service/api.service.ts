@@ -36,7 +36,7 @@ export class ApiService {
 
   getMoreItem = (pageNo) => {
     if (pageNo < this.totalPage) {
-      let start = (pageNo) * this.pageSize,
+      const start = (pageNo) * this.pageSize,
         end = start + this.pageSize;
       this.currentPage++;
       return this.itemsList.slice(start, end);
