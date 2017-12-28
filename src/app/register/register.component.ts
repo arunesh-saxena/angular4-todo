@@ -20,10 +20,13 @@ export class RegisterComponent implements OnInit {
     this.regForm = this.fb.group({
       'userName': ['', Validators.compose([
         Validators.required,
-        Validators.minLength(5)])],
+        Validators.minLength(4)])],
       'email': ['', Validators.compose([
         Validators.required,
         this.emailValidator()
+      ])],
+      'userRole': ['', Validators.compose([
+        Validators.required
       ])],
       repeatpassword: this.fb.group({
         'password': ['', Validators.compose([
@@ -41,22 +44,21 @@ export class RegisterComponent implements OnInit {
   }
   registerForm = (e) => {
     e.preventDefault();
-    // console.log(this.regForm.controls.userName.errors);
-    // console.log(this.regForm.valid);
-    // console.log('checking form validation');
     if (this.regForm.valid) {
-      let formData = {
+      const formData = {
         username: this.regForm.value.userName,
         email: this.regForm.value.email,
-        password: this.regForm.value.repeatpassword.password
+        password: this.regForm.value.repeatpassword.password,
+        role: this.regForm.value.userRole
       };
+      console.log(formData);
       this.onregister(formData);
     }
   }
   confirmPasswordValidator(group: FormGroup) {
     let val, valid = true;
 
-    for (let name in group.controls) {
+    for (const name in group.controls) {
       if (val === undefined) {
         val = group.controls[name].value;
       } else {
@@ -78,10 +80,10 @@ export class RegisterComponent implements OnInit {
   equalPassword = (item) => {
     return (control: FormControl) => {
       if (this.regForm) {
-        console.log(111)
+        console.log(111);
 
-        let password = control.value.password,
-          confirmPassword = control.value.confirmPassword;
+        const password = control.value.password,
+        confirmPassword = control.value.confirmPassword;
         console.log(password);
         console.log(confirmPassword);
         if (password !== confirmPassword) {
@@ -94,15 +96,14 @@ export class RegisterComponent implements OnInit {
   }
   emailValidator = () => {
     return (control: FormControl) => {
-      var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-      var emailVal = control.value;
+      const EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+      const emailVal = control.value;
       if (emailVal !== null && emailVal.length <= 5 || !EMAIL_REGEXP.test(emailVal)) {
         return { 'email': true };
       }
       return null;
     };
   }
-
 
 
 }

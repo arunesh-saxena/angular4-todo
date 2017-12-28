@@ -49,6 +49,17 @@
                         </div>
                     </div>
                 </div>
+                    <div class="form-group">
+                        <label for="role">User Role</label>
+                        <select class="form-control" id="role" name ='userName' formControlName="userRole">
+                            <option value="">Select User Role</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Chef</option>
+                        </select>
+                        <div *ngIf="regForm.controls['userRole'].touched && regForm.controls['userRole'].hasError('required')" class="alert alert-danger">
+                            Please select user role
+                        </div>
+                    </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-12 col-sm-offset-3">
